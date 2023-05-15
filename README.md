@@ -1,4 +1,7 @@
 - Luồng chạy ưu tiên
+
   - B1: Run code tổng thể (Nếu code tổng thể nằm sau 1 micro-task thì ưu tiên micro task trước)
-  - B2: Run micro-task (job queue) (Promise, async/await, process.nextTick...v.v)
+  - B2: Run micro-task (job queue) (Promise, async/await, process.nextTick..., nextTick có độ ưu tiên cao nhất kể từ vòng lặp thứ 2 v.v)
   - B3: Run macro-task (task queue) (setTimeout, setInterval, I/O, UI render...v.v)
+
+- Chú ý: Event Loop có thể rơi vào vòng lặp vô tận nếu có các hàm process.nextTick() gọi vào nhau.

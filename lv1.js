@@ -1,30 +1,30 @@
 console.log('0'); // code tổng thể
 
-setTimeout(function () {
+setTimeout(() => {
     console.log('1');
-}); // macro-task 1 chạy cuối
+}, 0); // macro-task 1 chạy cuối
 
-new Promise(function (resolve, reject) {
+new Promise((resolve, reject) => {
     console.log('2'); // micro-task 1 execute
     resolve(3);
-}).then(function (val) {
+}).then((val) => {
     console.log(val); // micro-task 3 execute
-}).then(function () {
+}).then(() => {
     console.log('then...1'); // micro-task 5 execute
 });
 
-new Promise(function (resolve, reject) {
+new Promise((resolve, reject) => {
     console.log('4'); // micro-task 2 execute
     resolve(5);
-}).then(function (val) {
+}).then((val) => {
     console.log(val); // micro-task 4 execute
-}).then(function () {
+}).then(() => {
     console.log('then...2'); // micro-task 6 execute
 });
 
-setTimeout(function () {
+setTimeout(() => {
     console.log('7');
-}); // macro-task 2 chạy cuối
+}, 0); // macro-task 2 chạy cuối
 
 console.log('6'); // code tổng thể
 

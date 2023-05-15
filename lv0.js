@@ -1,11 +1,11 @@
-setTimeout(function () {
+setTimeout(() => {
     console.log('1');
-}); // macro-task 1 chạy cuối
+}, 0); // macro-task 1 chạy cuối
 
-new Promise(function (resolve, reject) {
+new Promise((resolve, reject) => {
     console.log('2'); // micro-task 1 execute
     resolve(3);
-}).then(function (val) {
+}).then((val) => {
     console.log(val); // micro-task 2 execute
 });
 
